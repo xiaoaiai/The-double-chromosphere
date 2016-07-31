@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+	<script language="javascript">
+	var number=0;
+	var timer;
+	function time(){
+		var numr1=document.getElementById("randomnumr1");
+		var numr2=document.getElementById("randomnumr2");
+		var numr3=document.getElementById("randomnumr3");
+		var numr4=document.getElementById("randomnumr4");
+		var numr5=document.getElementById("randomnumr5");
+		var numr6=document.getElementById("randomnumr6");
+		var numb=document.getElementById("randomnumb");
+		var num=document.getElementById("randomnum");
+		number++;
+		if(number<=30){
+			num.value=Math.floor(Math.random()*33+1);//1-33  ;
+			if(number==5){
+				 numr1.value=num.value;
+				}if(number==10){
+					numr2.value=num.value;
+					}if(number==15){
+						numr3.value=num.value;
+						}if(number==20){
+							numr4.value=num.value;
+							}if(number==25){
+								numr5.value=num.value;
+								}if(number==30){
+									numr6.value=num.value;
+									}
+		}
+		else if(number>30){
+			num.value=Math.floor(Math.random()*16+1);//1-16
+			if(number==35){
+				numb.value=num.value;
+				alert("摇奖完毕！");
+				ownstop();
+				}
+		}
+		}
+		function ownstart(){
+			var numr1=document.getElementById("randomnumr1");
+			var numr2=document.getElementById("randomnumr2");
+			var numr3=document.getElementById("randomnumr3");
+			var numr4=document.getElementById("randomnumr4");
+			var numr5=document.getElementById("randomnumr5");
+			var numr6=document.getElementById("randomnumr6");
+			var numb=document.getElementById("randomnumb");
+			var num=document.getElementById("randomnum");
+			numr1.value="";
+			numr2.value="";
+			numr3.value="";
+			numr4.value="";
+			numr5.value="";
+			numr6.value="";
+			numb.value="";
+			num.value="";
+			timer=window.setInterval("time()",1000);
+			}
+		function ownstop(){
+		   window.clearInterval(timer);
+		}
+    </script>
+</head>
+
+<body style="background:url(双色球.jpg) no-repeat; background-position:top; background-size:cover">
+    <center>
+        <br /><br /><br /><br />
+        <input type="text" style="width:30px;height:30px;color:#F00" id="randomnumr1" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" style="width:30px;height:30px;color:#F00; alignment-adjust:central" id="randomnumr2" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" style="width:30px;height:30px;color:#F00" id="randomnumr3" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" style="width:30px;height:30px;color:#F00" id="randomnumr4" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" style="width:30px;height:30px;color:#F00"id="randomnumr5" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" style="width:30px;height:30px;color:#F00" id="randomnumr6" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" style="width:30px;height:30px;color:#00F"id="randomnumb" />
+        <br /><br /><br /><br />
+        <input type="text" style="width:30px;height:30px"id="randomnum"/><br /><br>
+        <input type="button" value="开始摇奖" onclick="ownstart()" />
+    </center>
+</body>
+</html>
